@@ -64,3 +64,52 @@ Relatively easy to use and to understand
             return customers;
         }
 ```
+
+<h2>Example of INSERT, UPDATE and DELETE</h2>
+
+```c#
+        public static void addNewCustomer(Customer customer)
+        {
+            //Here use your ConnectionString    
+            using (SqlConnection connection = new SqlConnection(DBConnector.GetBuilder().ConnectionString))
+            {
+                connection.Open();
+
+                ORM.Insert(connection, customer);
+
+                connection.Close();
+            }
+                
+        }
+```
+
+```c#
+        public static void updateCustomer(Customer customer)
+        {
+            //Here use your ConnectionString    
+            using (SqlConnection connection = new SqlConnection(DBConnector.GetBuilder().ConnectionString))
+            {
+                connection.Open();
+
+                ORM.Update(connection, customer);
+
+                connection.Close();
+            }
+
+        }
+```
+
+```c#
+         public static void deleteByID(Customer customer)
+        {
+            //Here use your ConnectionString
+            using (SqlConnection connection = new SqlConnection(DBConnector.GetBuilder().ConnectionString))
+            {
+                connection.Open();
+
+                ORM.Delete(connection, customer);
+
+                connection.Close();
+            }
+        }
+```
