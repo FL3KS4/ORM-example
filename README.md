@@ -35,7 +35,7 @@ Relatively easy to use and to understand
             using (SqlConnection connection = new SqlConnection(DBConnector.GetBuilder().ConnectionString))
             {
                 connection.Open();
-                cars = await ORM.Select<Cars>(connection, "SELECT * FROM Vozidlo where brand=@brand", createParam);
+                cars = await ORM.Select<Cars>(connection, "SELECT * FROM Cars WHERE brand=@brand", createParam);
                 connection.Close();
             }
 
