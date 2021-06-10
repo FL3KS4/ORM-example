@@ -100,7 +100,7 @@ Relatively easy to use and to understand
 ```
 
 ```c#
-         public static void deleteByID(Customer customer)
+        public static void deleteByID(Customer customer)
         {
             //Here use your ConnectionString
             using (SqlConnection connection = new SqlConnection(DBConnector.GetBuilder().ConnectionString))
